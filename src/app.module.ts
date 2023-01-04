@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
+import { Content } from './submodules/backend-refresher-1.0-entities/src/entities/content.entity';
 import { User } from './submodules/backend-refresher-1.0-entities/src/entities/user.entity';
 
 @Module({
@@ -15,8 +16,8 @@ import { User } from './submodules/backend-refresher-1.0-entities/src/entities/u
       username: 'postgres',
       password: '12345',
       database: 'backend-socialmedia',
-      entities: [ User ],
-      synchronize: false,
+      entities: [ User ,Content],
+      synchronize: true,
       logging: true
     }),
 
